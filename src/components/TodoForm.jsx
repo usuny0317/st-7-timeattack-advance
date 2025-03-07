@@ -33,7 +33,7 @@ export default function TodoForm({ fetchData }) {
   const mutation = useMutation({
     mutationFn: handleAddTodo,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["todos"] });
+      queryClient.invalidateQueries({ queryKey: "todos" });
 
       setTitle("");
       setContents("");
@@ -61,7 +61,7 @@ export default function TodoForm({ fetchData }) {
         onChange={(e) => setContents(e.target.value)}
         required
       />
-      <button type="submit">{mutation.isPending ? " 추가 중 " : "추가"}</button>
+      <button type="submit">추가</button>
     </form>
   );
 }

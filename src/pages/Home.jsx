@@ -22,10 +22,7 @@ export default function Home() {
     }
   };
 
-  const { data, isPending, isError, error } = useTodoQuery(
-    ["todos"],
-    fetchData
-  );
+  const { data, isPending, isError, error } = useTodoQuery("todos", fetchData);
   //기준이 되는 애를 줘야하는데.. 뭐가 기준이 되지?
   //일단 todos로 두니까 되긴한다.
 
